@@ -1,0 +1,128 @@
+<!doctype html>
+<html lang="hi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#102b54">
+<title>Exam Taiyari — Version 3</title>
+<style>
+:root{--navy:#102b54;--blue:#2563eb;--light:#eef4ff;--ink:#182235;--muted:#637083;--green:#16845b;--red:#c33d4b;--line:#e1e7f0;--paper:#f5f7fb}
+*{box-sizing:border-box}body{margin:0;background:var(--paper);color:var(--ink);font:15px/1.5 system-ui,-apple-system,"Noto Sans Devanagari",sans-serif}button,input,select{font:inherit}button{cursor:pointer;border:0;border-radius:10px;padding:11px 15px;font-weight:700}.primary{background:var(--blue);color:#fff}.soft{background:var(--light);color:var(--navy)}.outline{background:#fff;border:1px solid var(--line);color:var(--ink)}.danger{background:#fff0f1;color:var(--red)}header{background:linear-gradient(120deg,#102b54,#2458a6);color:white;padding:19px max(16px,calc((100vw - 1100px)/2));display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap}header h1{font-size:22px;margin:0}header p{margin:3px 0 0;color:#dce8ff;font-size:13px}.pill{background:#ffffff20;padding:7px 10px;border-radius:999px;font-size:12px}.wrap{max-width:1100px;margin:auto;padding:20px 15px 48px}.hero{background:#fff;border:1px solid var(--line);border-radius:18px;padding:22px;display:grid;grid-template-columns:1.5fr 1fr;gap:20px;align-items:center;box-shadow:0 6px 22px #142e5010}.hero h2{font-size:clamp(23px,4vw,32px);line-height:1.2;margin:0 0 10px}.hero p{color:var(--muted);margin:0 0 16px}.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:9px}.stat{background:var(--light);border-radius:12px;padding:13px}.stat b{display:block;font-size:22px;color:var(--navy)}.stat span{font-size:12px;color:var(--muted)}.section{margin-top:24px}.section-head{display:flex;justify-content:space-between;align-items:end;gap:10px;flex-wrap:wrap;margin-bottom:12px}.section h3{margin:0;font-size:19px}.section-head p{margin:3px 0 0;color:var(--muted);font-size:13px}.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}.card{background:#fff;border:1px solid var(--line);border-radius:15px;padding:16px}.card h4{margin:5px 0 7px;font-size:16px}.card p{margin:0 0 12px;color:var(--muted);font-size:13px}.tag{display:inline-block;background:#eaf2ff;color:#2458a6;border-radius:6px;padding:4px 7px;font-size:11px;font-weight:700}.subject-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:10px}.subject{background:white;border:1px solid var(--line);border-radius:12px;padding:13px 9px;text-align:center}.subject span{font-size:23px;display:block}.subject b{font-size:13px;display:block;margin:5px 0 8px}.subject button{font-size:12px;padding:8px;width:100%}.bar{display:flex;gap:8px;flex-wrap:wrap}.bar input,.bar select{border:1px solid var(--line);border-radius:10px;padding:10px;background:white;min-width:160px}.hidden{display:none!important}.testbox{background:#fff;border:1px solid var(--line);border-radius:16px;padding:18px;margin-top:18px}.testtop{display:flex;justify-content:space-between;gap:12px;align-items:center;flex-wrap:wrap;border-bottom:1px solid var(--line);padding-bottom:13px}.timer{font-variant-numeric:tabular-nums;background:#fff3dd;color:#8b5100;padding:7px 11px;border-radius:9px;font-weight:800}.progress{height:7px;background:#edf0f5;border-radius:99px;overflow:hidden;margin:15px 0}.progress div{height:100%;background:var(--blue);width:0}.testlayout{display:grid;grid-template-columns:minmax(0,1fr) 230px;gap:18px}.qnum{color:var(--muted);font-size:13px}.question{font-size:20px;font-weight:750;margin:10px 0 18px}.option{display:flex;gap:10px;align-items:flex-start;padding:12px;border:1px solid var(--line);border-radius:11px;margin:9px 0;cursor:pointer}.option input{margin-top:5px;accent-color:var(--blue)}.option.selected{border-color:var(--blue);background:#f1f6ff}.option.correct{border-color:var(--green);background:#eaf8f1}.option.wrong{border-color:var(--red);background:#fff0f1}.testactions{display:flex;gap:8px;flex-wrap:wrap;margin-top:18px}.palette{display:grid;grid-template-columns:repeat(5,1fr);gap:7px;margin:10px 0}.palette button{padding:8px 0;background:#edf0f5;color:#455166}.palette button.answered{background:#d9f4e7;color:#126342}.palette button.current{outline:2px solid var(--blue)}.palette button.marked{background:#fff0c9;color:#815700}.note{font-size:12px;color:var(--muted)}.resultscore{font-size:42px;font-weight:850;color:var(--navy)}.resultrow{padding:13px 0;border-bottom:1px solid var(--line)}.resultrow:last-child{border:0}.resultrow p{margin:7px 0;color:var(--muted)}footer{text-align:center;color:var(--muted);font-size:12px;padding:20px}.history-item{padding:11px 0;border-bottom:1px solid var(--line);display:flex;justify-content:space-between;gap:12px}.empty{color:var(--muted);padding:14px;background:#fff;border:1px dashed var(--line);border-radius:12px}
+@media(max-width:760px){.hero{grid-template-columns:1fr}.grid{grid-template-columns:1fr}.subject-grid{grid-template-columns:repeat(2,1fr)}.testlayout{grid-template-columns:1fr}.palette{grid-template-columns:repeat(8,1fr)}.wrap{padding:14px 12px 35px}.testbox{padding:13px}.question{font-size:18px}}
+</style>
+</head>
+<body>
+<header><div><h1>📘 Exam Taiyari</h1><p>Free Mock Tests • Practice • Performance</p></div><div class="pill">Version 3 · Hindi · Mobile Friendly</div></header>
+<main class="wrap">
+<section id="home">
+<div class="hero">
+<div><span class="tag">आपकी तैयारी, आपकी रफ़्तार</span><h2>आज की प्रैक्टिस से<br>कल की सफलता तक।</h2><p>UPSSSC PET की तैयारी के लिए विषयवार क्विज़ और मॉक टेस्ट। उत्तर चुनें, समय पर टेस्ट पूरा करें और अपनी गलतियों से सीखें।</p><div class="bar"><button class="primary" onclick="startTest('mixed',15,15)">15 प्रश्नों का मॉक टेस्ट</button><button class="soft" onclick="startTest('mixed',5,5)">5 प्रश्नों का क्विक टेस्ट</button></div></div>
+<div class="stats"><div class="stat"><b id="statTests">0</b><span>दिए गए टेस्ट</span></div><div class="stat"><b id="statBest">—</b><span>सर्वश्रेष्ठ स्कोर</span></div><div class="stat"><b id="statAcc">—</b><span>औसत सटीकता</span></div></div>
+</div>
+<div class="section"><div class="section-head"><div><h3>🎯 परीक्षा चुनें</h3><p>अभी PET को प्राथमिकता; दूसरे परीक्षा सेक्शन विस्तार के लिए तैयार हैं।</p></div></div><div class="grid">
+<div class="card"><span class="tag">मुख्य परीक्षा</span><h4>UPSSSC PET 2026</h4><p>सामान्य अध्ययन, हिंदी, गणित, रीजनिंग और अन्य विषय।</p><button class="primary" onclick="startTest('mixed',15,15)">मॉक टेस्ट शुरू करें</button></div>
+<div class="card"><span class="tag">प्रैक्टिस</span><h4>विषयवार टेस्ट</h4><p>अपनी कमज़ोरियों पर काम करने के लिए एक विषय चुनें।</p><button class="soft" onclick="document.getElementById('subjects').scrollIntoView({behavior:'smooth'})">विषय चुनें</button></div>
+<div class="card"><span class="tag">प्रगति</span><h4>टेस्ट हिस्ट्री</h4><p>इस डिवाइस पर सेव किए गए पिछले परिणाम देखें।</p><button class="outline" onclick="document.getElementById('history').scrollIntoView({behavior:'smooth'})">मेरे परिणाम</button></div>
+</div></div>
+<div class="section" id="subjects"><div class="section-head"><div><h3>📚 विषयवार क्विज़</h3><p>हर क्विज़ में प्रश्न, विकल्प और उत्तर की व्याख्या।</p></div><div class="bar"><input id="subjectSearch" placeholder="विषय खोजें…" oninput="filterSubjects()"></div></div><div class="subject-grid" id="subjectGrid"></div></div>
+<div class="section"><div class="section-head"><div><h3>🧠 टेस्ट मोड</h3><p>टेस्ट शुरू करने से पहले मोड चुनें।</p></div></div><div class="grid">
+<div class="card"><h4>⚡ क्विक टेस्ट</h4><p>5 प्रश्न · लगभग 5 मिनट</p><button class="primary" onclick="startTest('mixed',5,5)">शुरू करें</button></div>
+<div class="card"><h4>📝 मॉक टेस्ट</h4><p>15 प्रश्न · लगभग 15 मिनट</p><button class="primary" onclick="startTest('mixed',15,15)">शुरू करें</button></div>
+<div class="card"><h4>⏱️ टाइम्ड प्रैक्टिस</h4><p>10 प्रश्न · 5 मिनट</p><button class="primary" onclick="startTest('mixed',10,5)">शुरू करें</button></div>
+</div></div>
+<div class="section" id="history"><div class="section-head"><div><h3>📈 आपकी टेस्ट हिस्ट्री</h3><p>इतिहास केवल इसी ब्राउज़र/डिवाइस में सेव होता है।</p></div><button class="outline" onclick="clearHistory()">हिस्ट्री मिटाएँ</button></div><div id="historyList" class="card"></div></div>
+</section>
+<section id="test" class="hidden">
+<div class="testbox"><div class="testtop"><div><b id="testTitle">मॉक टेस्ट</b><div class="note" id="testSubtitle">प्रश्न पढ़ें और सबसे सही विकल्प चुनें।</div></div><div class="timer" id="timer">05:00</div></div><div class="progress"><div id="progressFill"></div></div>
+<div class="testlayout"><div><div class="qnum" id="qnum"></div><div class="question" id="questionText"></div><div id="options"></div><div id="explanation" class="card hidden" style="margin-top:12px;background:#f7fafc"></div><div class="testactions"><button class="outline" onclick="previousQ()">← पिछला</button><button class="soft" onclick="toggleMark()">⚑ बाद में देखें</button><button class="primary" onclick="nextQ()" id="nextBtn">अगला →</button><button class="danger" onclick="confirmSubmit()">टेस्ट जमा करें</button></div></div>
+<aside><b>प्रश्न सूची</b><div class="palette" id="palette"></div><div class="note">हरा = उत्तर चुना · पीला = बाद में देखें</div><hr style="border:0;border-top:1px solid var(--line);margin:15px 0"><div class="note" id="answeredCount"></div><button class="outline" style="width:100%;margin-top:10px" onclick="confirmSubmit()">टेस्ट समाप्त करें</button></aside></div></div>
+</section>
+<section id="results" class="hidden"><div class="testbox"><div class="testtop"><div><span class="tag">टेस्ट पूरा हुआ</span><h2 style="margin:8px 0 0">आपका परिणाम</h2></div><button class="primary" onclick="goHome()">होम पर जाएँ</button></div><div class="resultscore" id="scoreBig">0/0</div><div id="resultSummary"></div><div class="testactions"><button class="primary" onclick="reviewAnswers()">उत्तर और व्याख्या देखें</button><button class="soft" onclick="startTest('mixed',15,15)">फिर से मॉक टेस्ट दें</button></div><div id="review" class="hidden" style="margin-top:18px"></div></div></section>
+</main><footer>Exam Taiyari · अभ्यास के लिए शैक्षिक प्रोटोटाइप · आधिकारिक परीक्षा संस्था से संबद्ध नहीं</footer>
+<script>
+const subjects=[
+ {id:'history',name:'इतिहास',emoji:'🏛️',qs:[
+ ['1857 के विद्रोह की शुरुआत कहाँ से हुई?',['मेरठ','कानपुर','झाँसी','दिल्ली'],0,'10 मई 1857 को मेरठ से विद्रोह शुरू हुआ।'],
+ ['भारतीय राष्ट्रीय कांग्रेस की स्थापना किस वर्ष हुई?',['1882','1885','1905','1919'],1,'भारतीय राष्ट्रीय कांग्रेस की स्थापना 1885 में हुई।'],
+ ['दांडी मार्च किस आंदोलन से संबंधित था?',['भारत छोड़ो','असहयोग','सविनय अवज्ञा','खिलाफत'],2,'1930 का दांडी मार्च नमक कानून के विरोध में सविनय अवज्ञा आंदोलन का प्रमुख चरण था।'],
+ ['भारत छोड़ो आंदोलन किस वर्ष शुरू हुआ?',['1930','1935','1942','1946'],2,'भारत छोड़ो आंदोलन अगस्त 1942 में शुरू हुआ।'],
+ ['सम्राट अशोक किस वंश से संबंधित थे?',['गुप्त','मौर्य','कुषाण','चोल'],1,'अशोक मौर्य वंश के प्रमुख सम्राट थे।']]},
+ {id:'geo',name:'भूगोल',emoji:'🌍',qs:[
+ ['भारत की सबसे लंबी नदी जो पूरी तरह भारत में बहती है, कौन-सी है?',['गंगा','गोदावरी','नर्मदा','कृष्णा'],1,'गोदावरी को प्रायद्वीपीय भारत की सबसे लंबी नदी माना जाता है।'],
+ ['कर्क रेखा भारत के कितने राज्यों से गुजरती है?',['6','7','8','9'],2,'कर्क रेखा भारत के 8 राज्यों से गुजरती है।'],
+ ['काली मिट्टी किस फसल के लिए विशेष रूप से उपयुक्त है?',['चाय','कपास','जूट','सेब'],1,'काली मिट्टी में नमी धारण करने की क्षमता अच्छी होती है; यह कपास के लिए अनुकूल है।'],
+ ['भारत का मानक समय किस देशांतर पर आधारित है?',['68°7′ पू.','82°30′ पू.','90° पू.','75° पू.'],1,'भारतीय मानक समय 82°30′ पूर्व देशांतर पर आधारित है।'],
+ ['सुंदरबन डेल्टा मुख्यतः किन नदियों से बनता है?',['नर्मदा-ताप्ती','गंगा-ब्रह्मपुत्र','गोदावरी-कृष्णा','सिंधु-झेलम'],1,'गंगा-ब्रह्मपुत्र-मेघना नदी तंत्र सुंदरबन डेल्टा बनाता है।']]},
+ {id:'polity',name:'संविधान',emoji:'⚖️',qs:[
+ ['भारतीय संविधान कब लागू हुआ?',['15 अगस्त 1947','26 जनवरी 1950','26 नवंबर 1949','2 अक्टूबर 1950'],1,'संविधान 26 जनवरी 1950 को लागू हुआ।'],
+ ['मौलिक अधिकार संविधान के किस भाग में हैं?',['भाग II','भाग III','भाग IV','भाग IVA'],1,'मौलिक अधिकार भाग III (अनुच्छेद 12–35) में हैं।'],
+ ['भारत में संविधान सभा के अध्यक्ष कौन थे?',['डॉ. राजेंद्र प्रसाद','डॉ. आंबेडकर','जवाहरलाल नेहरू','सरदार पटेल'],0,'डॉ. राजेंद्र प्रसाद संविधान सभा के अध्यक्ष थे।'],
+ ['राज्य के नीति-निदेशक तत्व किस भाग में हैं?',['भाग III','भाग IV','भाग V','भाग IVA'],1,'नीति-निदेशक तत्व भाग IV में हैं।'],
+ ['भारत में मतदान की न्यूनतम आयु कितनी है?',['16 वर्ष','18 वर्ष','21 वर्ष','25 वर्ष'],1,'61वें संविधान संशोधन के बाद मतदान की आयु 18 वर्ष हुई।']]},
+ {id:'science',name:'विज्ञान',emoji:'🔬',qs:[
+ ['पौधों में प्रकाश संश्लेषण के लिए कौन-सा वर्णक आवश्यक है?',['हीमोग्लोबिन','क्लोरोफिल','मेलानिन','इंसुलिन'],1,'क्लोरोफिल सूर्य के प्रकाश को अवशोषित करता है।'],
+ ['मानव शरीर में रक्त को छानने का मुख्य कार्य कौन करता है?',['हृदय','फेफड़े','गुर्दे','अग्न्याशय'],2,'गुर्दे रक्त से अपशिष्ट पदार्थ छानकर मूत्र बनाते हैं।'],
+ ['बल की SI इकाई क्या है?',['जूल','वाट','न्यूटन','पास्कल'],2,'बल की SI इकाई न्यूटन है।'],
+ ['विटामिन C की कमी से कौन-सा रोग होता है?',['रिकेट्स','स्कर्वी','बेरी-बेरी','रतौंधी'],1,'विटामिन C की कमी से स्कर्वी हो सकता है।'],
+ ['सामान्य वायुदाब पर पानी का क्वथनांक कितना है?',['0°C','50°C','100°C','150°C'],2,'समुद्र तल के आसपास सामान्य वायुदाब पर पानी 100°C पर उबलता है।']]},
+ {id:'math',name:'गणित',emoji:'➗',qs:[
+ ['200 का 15% कितना है?',['15','20','30','35'],2,'200 × 15/100 = 30।'],
+ ['12 और 18 का लघुत्तम समापवर्त्य (LCM) क्या है?',['24','30','36','72'],2,'12 = 2²×3 और 18 = 2×3², इसलिए LCM = 36।'],
+ ['यदि 5x = 45, तो x कितना है?',['5','8','9','10'],2,'दोनों पक्षों को 5 से भाग दें: x = 9।'],
+ ['एक वस्तु ₹500 में खरीदी और ₹600 में बेची। लाभ प्रतिशत?',['10%','15%','20%','25%'],2,'लाभ ₹100; लाभ प्रतिशत = 100/500 × 100 = 20%।'],
+ ['3/4 को प्रतिशत में लिखें।',['25%','50%','75%','80%'],2,'3 ÷ 4 × 100 = 75%।']]},
+ {id:'reason',name:'रीजनिंग',emoji:'🧩',qs:[
+ ['श्रृंखला पूरी करें: 2, 4, 8, 16, __',['18','24','30','32'],3,'हर पद पिछले पद का दोगुना है।'],
+ ['यदि CAT को DBU लिखा जाए, तो DOG कैसे लिखा जाएगा?',['EPH','EOG','FPH','DPH'],0,'हर अक्षर को अंग्रेज़ी वर्णमाला में एक स्थान आगे किया गया है।'],
+ ['इनमें से अलग कौन है?',['सेब','आम','गाजर','केला'],2,'गाजर सामान्यतः सब्ज़ी है; बाकी फल हैं।'],
+ ['उत्तर की ओर मुँह करके दाएँ मुड़ने पर दिशा क्या होगी?',['पश्चिम','पूर्व','दक्षिण','उत्तर'],1,'उत्तर से दाएँ मुड़ने पर पूर्व दिशा होती है।'],
+ ['श्रृंखला: 5, 10, 15, 20, __',['22','24','25','30'],2,'हर बार 5 जोड़ा गया है।']]},
+ {id:'hindi',name:'हिंदी',emoji:'🔤',qs:[
+ ['“सूर्य” का पर्यायवाची कौन-सा है?',['निशाकर','रवि','पवन','नीर'],1,'रवि सूर्य का पर्यायवाची है।'],
+ ['“अंधकार” का विलोम क्या है?',['रात्रि','छाया','प्रकाश','काला'],2,'अंधकार का विलोम प्रकाश है।'],
+ ['“आँखों का तारा” मुहावरे का अर्थ क्या है?',['बहुत दूर','बहुत प्रिय','बहुत क्रोधित','बहुत तेज'],1,'इसका अर्थ है बहुत प्रिय व्यक्ति।'],
+ ['“विद्यालय” में कौन-सी संधि है?',['दीर्घ स्वर संधि','गुण संधि','वृद्धि संधि','यण संधि'],0,'विद्या + आलय में आ + आ से दीर्घ स्वर संधि होती है।'],
+ ['जो कभी न मरे, उसके लिए एक शब्द है—',['अजर','अमर','अज्ञानी','अटल'],1,'जो कभी न मरे उसे अमर कहते हैं।']]},
+ {id:'english',name:'English',emoji:'🔠',qs:[
+ ['Choose the synonym of “Rapid”.',['Slow','Fast','Weak','Late'],1,'Rapid means fast or quick.'],
+ ['Choose the correct plural of “Child”.',['Childs','Childes','Children','Childrens'],2,'The plural form of child is children.'],
+ ['Fill in: She ___ to school every day.',['go','going','goes','gone'],2,'With “she” in the simple present, use “goes”.'],
+ ['Opposite of “Ancient” is—',['Old','Modern','Historic','Past'],1,'Modern is the opposite of ancient.'],
+ ['Choose the correctly spelled word.',['Enviroment','Environment','Envirnoment','Environmant'],1,'The correct spelling is Environment.']]},
+ {id:'current',name:'सामान्य ज्ञान',emoji:'🗞️',qs:[
+ ['भारत की राजधानी क्या है?',['मुंबई','नई दिल्ली','कोलकाता','चेन्नई'],1,'भारत की राजधानी नई दिल्ली है।'],
+ ['भारत का राष्ट्रीय पशु कौन है?',['एशियाई शेर','बंगाल टाइगर','हाथी','तेंदुआ'],1,'भारत का राष्ट्रीय पशु बंगाल टाइगर है।'],
+ ['भारतीय रिज़र्व बैंक की स्थापना किस वर्ष हुई?',['1935','1947','1950','1955'],0,'RBI की स्थापना 1 अप्रैल 1935 को हुई।'],
+ ['ISRO का मुख्यालय कहाँ है?',['हैदराबाद','नई दिल्ली','बेंगलुरु','चेन्नई'],2,'ISRO का मुख्यालय बेंगलुरु में है।'],
+ ['भारत का राष्ट्रीय गान किसने लिखा?',['बंकिमचंद्र चट्टोपाध्याय','रवींद्रनाथ टैगोर','मुंशी प्रेमचंद','सरोजिनी नायडू'],1,'जन गण मन रवींद्रनाथ टैगोर ने लिखा।']]},
+ {id:'up',name:'उत्तर प्रदेश GK',emoji:'🏙️',qs:[
+ ['उत्तर प्रदेश की राजधानी क्या है?',['कानपुर','प्रयागराज','लखनऊ','वाराणसी'],2,'उत्तर प्रदेश की राजधानी लखनऊ है।'],
+ ['ताजमहल किस शहर में स्थित है?',['आगरा','लखनऊ','मेरठ','गोरखपुर'],0,'ताजमहल आगरा में स्थित है।'],
+ ['उत्तर प्रदेश उच्च न्यायालय की मुख्य पीठ कहाँ है?',['लखनऊ','प्रयागराज','कानपुर','वाराणसी'],1,'इलाहाबाद उच्च न्यायालय की मुख्य पीठ प्रयागराज में है; लखनऊ में खंडपीठ है।'],
+ ['कुंभ मेले का प्रमुख आयोजन उत्तर प्रदेश में किस शहर से जुड़ा है?',['झाँसी','प्रयागराज','नोएडा','बरेली'],1,'प्रयागराज में त्रिवेणी संगम पर कुंभ/महाकुंभ का आयोजन होता है।'],
+ ['उत्तर प्रदेश दिवस कब मनाया जाता है?',['24 जनवरी','26 जनवरी','15 अगस्त','2 अक्टूबर'],0,'उत्तर प्रदेश दिवस 24 जनवरी को मनाया जाता है।']]}
+];
+let currentQuestions=[],answers=[],marked=[],index=0,seconds=300,timerId=null,modeName='',submitted=false,lastResult=null;
+const $=id=>document.getElementById(id);
+function allQuestions(){return subjects.flatMap(s=>s.qs.map((q,i)=>({subject:s.name,text:q[0],opts:q[1],correct:q[2],explain:q[3],id:s.id+'-'+i})));}
+function renderSubjects(){ $('subjectGrid').innerHTML=subjects.map(s=>`<div class="subject" data-name="${s.name.toLowerCase()}"><span>${s.emoji}</span><b>${s.name}</b><button class="soft" onclick="startTest('${s.id}',5,5)">5 प्रश्न</button></div>`).join('');}
+function filterSubjects(){let q=$('subjectSearch').value.trim().toLowerCase();document.querySelectorAll('.subject').forEach(e=>e.classList.toggle('hidden',!e.dataset.name.includes(q)));}
+function startTest(subjectId,count,minutes){clearInterval(timerId);let bank=subjectId==='mixed'?allQuestions():subjects.find(s=>s.id===subjectId).qs.map((q,i)=>({subject:subjects.find(s=>s.id===subjectId).name,text:q[0],opts:q[1],correct:q[2],explain:q[3],id:subjectId+'-'+i}));currentQuestions=shuffle([...bank]).slice(0,Math.min(count,bank.length));answers=Array(currentQuestions.length).fill(null);marked=Array(currentQuestions.length).fill(false);index=0;seconds=minutes*60;submitted=false;modeName=subjectId==='mixed'?'मिक्स्ड मॉक टेस्ट':currentQuestions[0].subject+' क्विज़';$('home').classList.add('hidden');$('results').classList.add('hidden');$('test').classList.remove('hidden');$('testTitle').textContent=modeName;$('testSubtitle').textContent=`${currentQuestions.length} प्रश्न · सही विकल्प चुनें · गलत उत्तर की व्याख्या परिणाम में मिलेगी`;renderQuestion();timerId=setInterval(()=>{seconds--;updateTimer();if(seconds<=0){clearInterval(timerId);finishTest(true)}},1000);window.scrollTo({top:0,behavior:'smooth'});}
+function shuffle(a){for(let i=a.length-1;i>0;i--){let j=Math.floor(Math.random()*(i+1));[a[i],a[j]]=[a[j],a[i]]}return a}
+function updateTimer(){$('timer').textContent=String(Math.floor(seconds/60)).padStart(2,'0')+':'+String(seconds%60).padStart(2,'0');if(seconds<=60)$('timer').style.background='#ffe4e6';}
+function renderQuestion(){let q=currentQuestions[index];$('qnum').textContent=`प्रश्न ${index+1} / ${currentQuestions.length} · ${q.subject}`;$('questionText').textContent=q.text;$('options').innerHTML=q.opts.map((o,i)=>`<label class="option ${answers[index]===i?'selected':''}"><input type="radio" name="answer" ${answers[index]===i?'checked':''} onchange="choose(${i})"><span><b>${String.fromCharCode(65+i)}.</b> ${o}</span></label>`).join('');$('progressFill').style.width=((index+1)/currentQuestions.length*100)+'%';$('nextBtn').textContent=index===currentQuestions.length-1?'अंतिम प्रश्न ✓':'अगला →';$('explanation').classList.add('hidden');$('palette').innerHTML=currentQuestions.map((q,i)=>`<button class="${answers[i]!==null?'answered ':''}${marked[i]?'marked ':''}${index===i?'current':''}" onclick="jumpTo(${i})">${i+1}</button>`).join('');$('answeredCount').textContent=`उत्तर दिए: ${answers.filter(a=>a!==null).length}/${answers.length} · समीक्षा हेतु: ${marked.filter(Boolean).length}`;}
+function choose(v){answers[index]=v;renderQuestion();}
+function previousQ(){if(index>0){index--;renderQuestion()}}
+function nextQ(){if(index<currentQuestions.length-1){index++;renderQuestion()}else{$('questionText').textContent='यह अंतिम प्रश्न है। आप टेस्ट जमा कर सकते हैं या प्रश्न सूची से किसी प्रश्न पर जा सकते हैं。'}}
+function jumpTo(i){index=i;renderQuestion()}
+function toggleMark(){marked[index]=!marked[index];renderQuestion()}
+function confirmSubmit(){let unanswered=answers.filter(a=>a===null).length;if(confirm(`क्या आप टेस्ट जमा करना चाहते हैं?${unanswered?'\n'+unanswered+' प्रश्न अनुत्तरित हैं।':''}`))finishTest(false)}
+function finishTest(auto){if(submitted)return;submitted=true;clearInterval(timerId);let correct=0,wrong=0,blank=0;currentQuestions.forEach((q,i)=>{if(answers[i]===null)blank++;else if(answers[i]===q.correct)correct++;else wrong++});let percent=Math.round(correct/currentQuestions.length*100);lastResult={date:new Date().toLocaleString('hi-IN'),mode:modeName,total:currentQuestions.length,correct,wrong,blank,percent,items:currentQuestions.map((q,i)=>({...q,chosen:answers[i]}))};let h=JSON.parse(localStorage.getItem('examTaiyariV3History')||'[]');h.unshift({date:lastResult.date,mode:modeName,total:lastResult.total,correct,wrong,blank,percent});localStorage.setItem('examTaiyariV3History',JSON.stringify(h.slice(0,20)));$('test').classList.add('hidden');$('results').classList.remove('hidden');$('scoreBig').textContent=`${correct} / ${currentQuestions.length}`;$('resultSummary').innerHTML=`<div class="stats"><div class="stat"><b>${percent}%</b><span>स्कोर</span></div><div class="stat"><b>${wrong}</b><span>गलत उत्तर</span></div><div class="stat"><b>${blank}</b><span>छोड़े गए</span></div></div><p>${auto?'समय समाप्त होने पर टेस्ट स्वतः जमा हुआ।': 'टेस्ट जमा हो गया।'} ${percent>=80?'बहुत अच्छा! इसी तरह अभ्यास जारी रखें।':percent>=50?'अच्छा प्रयास। गलत प्रश्नों की व्याख्या ज़रूर देखें।':'व्याख्या पढ़ें और फिर एक बार अभ्यास करें।'}</p><p class="note">यह अभ्यास स्कोर है, आधिकारिक परीक्षा परिणाम नहीं।</p>`;$('review').classList.add('hidden');renderHistory();window.scrollTo({top:0,behavior:'smooth'});}
+function reviewAnswers(){$('review').classList.toggle('hidden');$('review').innerHTML=lastResult.items.map((q,i)=>`<div class="resultrow"><b>प्रश्न ${i+1}. ${q.text}</b><p>आपका उत्तर: ${q.chosen===null?'नहीं दिया':q.opts[q.chosen]} ${q.chosen===q.correct?'✓ सही':'✗'}<br>सही उत्तर: <b>${q.opts[q.correct]}</b></p><p><b>व्याख्या:</b> ${q.explain}</p></div>`).join('');}
+function renderHistory(){let h=JSON.parse(localStorage.getItem('examTaiyariV3History')||'[]');$('historyList').innerHTML=h.length?h.map(x=>`<div class="history-item"><div><b>${x.mode}</b><div class="note">${x.date} · सही ${x.correct}, गलत ${x.wrong}, छोड़े ${x.blank}</div></div><b>${x.percent}%</b></div>`).join(''):'<div class="empty">अभी कोई टेस्ट नहीं दिया गया। पहला क्विज़ शुरू करें!</div>';$('statTests').textContent=h.length;$('statBest').textContent=h.length?Math.max(...h.map(x=>x.percent))+'%':'—';$('statAcc').textContent=h.length?Math.round(h.reduce((a,x)=>a+x.percent,0)/h.length)+'%':'—';}
+function clearHistory(){if(confirm('क्या आप इस डिवाइस की टेस्ट हिस्ट्री मिटाना चाहते हैं?')){localStorage.removeItem('examTaiyariV3History');renderHistory()}}
+function goHome(){clearInterval(timerId);$('test').classList.add('hidden');$('results').classList.add('hidden');$('home').classList.remove('hidden');renderHistory();window.scrollTo({top:0,behavior:'smooth'});}
+renderSubjects();renderHistory();
+</script>
+</body>
+</html>
